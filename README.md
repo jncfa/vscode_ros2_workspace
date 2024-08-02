@@ -8,14 +8,14 @@ See [how I develop with vscode and ros2](https://www.allisonthackston.com/articl
 
 ### Style
 
-ROS2-approved formatters are included in the IDE.  
+ROS2-approved formatters are included in the IDE.
 
 * **c++** uncrustify; config from `ament_uncrustify`
 * **python** autopep8; vscode settings consistent with the [style guide](https://index.ros.org/doc/ros2/Contributing/Code-Style-Language-Versions/)
 
 ### Tasks
 
-There are many pre-defined tasks, see [`.vscode/tasks.json`](.vscode/tasks.json) for a complete listing.  Feel free to adjust them to suit your needs.  
+There are many pre-defined tasks, see [`.vscode/tasks.json`](.vscode/tasks.json) for a complete listing.  Feel free to adjust them to suit your needs.
 
 Take a look at [how I develop using tasks](https://www.allisonthackston.com/articles/vscode_tasks.html) for an idea on how I use tasks in my development.
 
@@ -66,7 +66,7 @@ Now you can clone your repo as normal
 
 ### Open it in vscode
 
-Now that you've cloned your repo onto your computer, you can open it in VSCode (File->Open Folder). 
+Now that you've cloned your repo onto your computer, you can open it in VSCode (File->Open Folder).
 
 When you open it for the first time, you should see a little popup that asks you if you would like to open it in a container.  Say yes!
 
@@ -146,7 +146,7 @@ If you want to access the vGPU through WSL2, you'll need to add additional compo
 
 ### Repos are not showing up in VS Code source control
 
-This is likely because vscode doesn't necessarily know about other repositories unless you've added them directly. 
+This is likely because vscode doesn't necessarily know about other repositories unless you've added them directly.
 
 ```
 File->Add Folder To Workspace
