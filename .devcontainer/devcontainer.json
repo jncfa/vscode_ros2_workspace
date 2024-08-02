@@ -3,7 +3,9 @@
 	"dockerFile": "Dockerfile",
 	"build": {
 		"args": {
-			"WORKSPACE": "${containerWorkspaceFolder}"
+			"WORKSPACE": "${containerWorkspaceFolder}",
+			"VARIANT": "full",
+			"ROS_DISTRO": "jazzy"
 		}
 	},
 	"remoteUser": "ros",
