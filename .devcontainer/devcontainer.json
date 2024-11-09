@@ -14,8 +14,6 @@
 		"--cap-add=SYS_PTRACE",
 		"--security-opt=seccomp:unconfined",
 		"--security-opt=apparmor:unconfined",
-		"--volume=/tmp/.X11-unix:/tmp/.X11-unix",
-		"--volume=/mnt/wslg:/mnt/wslg",
 		"--ipc=host"
 		// uncomment to use intel iGPU
 		// "--device=/dev/dri"
@@ -37,7 +35,7 @@
 				"ms-azuretools.vscode-docker",
 				"ms-iot.vscode-ros",
 				"ms-python.python",
-				"ms-vscode.cpptools",
+				"llvm-vs-code-extensions.vscode-clangd",
 				"redhat.vscode-yaml",
 				"smilerobotics.urdf",
 				"streetsidesoftware.code-spell-checker",

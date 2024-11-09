@@ -70,6 +70,5 @@
         ".vscode",
         ".vscode-insiders",
         ".devcontainer/devcontainer.json"
-    ],
-    "ament-task-provider.envSetup": "source /opt/ros/humble/setup.bash",
+    ]
 }
