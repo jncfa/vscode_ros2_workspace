@@ -20,13 +20,14 @@ RUN apt-get update \
    && rm -rf /var/lib/apt/lists/*
 ENV DEBIAN_FRONTEND=dialog
 
-# add extra colcon mixins
-RUN colcon mixin add default https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml
-RUN colcon mixin add my-extras https://raw.githubusercontent.com/jncfa/extra-colcon-mixins/main/index.yaml
-
 # Set up auto-source of workspace for ros user
 ARG WORKSPACE
 RUN echo "export WORKSPACE_DIR='${WORKSPACE}'" >> /home/ros/.bashrc
 
 RUN echo "if [ -f ${WORKSPACE}/install/setup.bash ]; then source ${WORKSPACE}/install/setup.bash; fi" >> /home/ros/.bashrc
 RUN echo "if [ -f ${WORKSPACE}/.env ]; then source ${WORKSPACE}/.env; fi" >> /home/ros/.bashrc
+
+# add extra colcon mixins (couldnt find a way to do it on the image, so this will run only once)
+RUN echo "colcon mixin add default https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml >& /dev/null && \
+   colcon mixin add my-extras https://raw.githubusercontent.com/jncfa/extra-colcon-mixins/main/index.yaml >& /dev/null && \
+   colcon mixin update" >> /home/ros/.bashrc
