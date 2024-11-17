@@ -10,6 +10,7 @@ RUN apt-get update \
    pre-commit \
    clangd \
    python3-colcon-clean \
+   python3-colcon-mixin \
    # pip installs
    && pip3 install --break-system-packages \
    git+https://github.com/ruffsl/colcon-cache.git \
@@ -18,6 +19,10 @@ RUN apt-get update \
    && apt-get clean -y \
    && rm -rf /var/lib/apt/lists/*
 ENV DEBIAN_FRONTEND=dialog
+
+# add extra colcon mixins
+RUN colcon mixin add default https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml
+RUN colcon mixin add my-extras https://raw.githubusercontent.com/jncfa/extra-colcon-mixins/main/index.yaml
 
 # Set up auto-source of workspace for ros user
 ARG WORKSPACE
